@@ -5,6 +5,10 @@ import Header from "./components/Header"
 import Sidebar from "./components/Sidebar";
 import MainContent from './components/MainContent';
 import Footer from './components/Footer';
+import TempContext from './contexts/TempContext';
+
+const minTemp = 16;
+const maxTemp = 28;
 
 function App() {
 
@@ -25,6 +29,13 @@ function App() {
 
   return (
     <div className='d-flex flex-column min-vh-100'>
+      <TempContext.Provider value = {{
+        temp,
+        handleIncreaseTemp,
+        handleDecreaseTemp,
+        handleResetTemp,
+      }}
+      >
     <Header/>
     <div className='flex-grow-1 d-flex gap-3'>
     <Sidebar/>
@@ -32,6 +43,7 @@ function App() {
 
     </div>
     <Footer/>
+    </TempContext.Provider>
     </div>
   )
 }
