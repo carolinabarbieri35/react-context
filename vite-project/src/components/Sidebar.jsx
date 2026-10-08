@@ -1,8 +1,13 @@
+import { useContext } from "react"
+import TempContext from "../contexts/TempContext"
+
 export default function Sidebar () {
+ const {handleResetTemp} = useContext (TempContext)
+
   return (
    <aside className="w-25 px-4 border-end">
     <h3 className="h5">Thermostat Reset</h3>
-    <button className="btn btn-dark">Reset</button>
+    <button onClick={handleResetTemp} className="btn btn-dark">Reset</button>
 
    </aside>
   )
