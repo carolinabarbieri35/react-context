@@ -1,8 +1,8 @@
-import { useContext } from "react"
-import TempContext from "../contexts/TempContext"
+
+import { useTempContext } from "../contexts/TempContext"
 
 export default function Sidebar () {
- const {handleResetTemp} = useContext (TempContext)
+ const {handleResetTemp} = useTempContext
 
   return (
    <aside className="w-25 px-4 border-end">
